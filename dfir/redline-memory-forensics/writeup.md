@@ -17,6 +17,7 @@ A workstation was flagged for suspicious activity. A memory dump was captured, a
 ## Investigation
 
 ### Q1 — What is the name of the suspicious process?
+![Process tree showing oneetx.exe and its child process rundll32.exe](screenshots/q1-q2-pstree-oneetx-rundll32.png)
 
 **Command:**
 
@@ -37,6 +38,7 @@ C:\Users\NOORJ\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n
 ---
 
 ### Q2 — What is the child process name of the suspicious process?
+![Process tree showing oneetx.exe and its child process rundll32.exe](screenshots/q1-q2-pstree-oneetx-rundll32.png)
 
 **Command:**
 
@@ -58,6 +60,7 @@ rundll32.exe is a legitimate Windows utility frequently abused by malware to exe
 ---
 
 ### Q3 — What is the memory protection applied to the suspicious process memory region?
+![VAD info showing PAGE_EXECUTE_READWRITE memory region for oneetx.exe](screenshots/q3-vadinfo-page-execute-readwrite.png)
 
 **Command:**
 
@@ -71,7 +74,7 @@ This plugin provides details about the memory regions associated with a process,
 ---
 
 ### Q4 — What is the name of the process responsible for the VPN connection?
-
+![Process tree showing tun2socks.exe under Outline VPN](screenshots/q4-pstree-tun2socks.png)
 **Command:**
 
 C:\Users\NOORJ\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\Scripts\vol.exe -f "C:\Users\NOORJ\Downloads\106-RedLine\temp_extract_dir\MemoryDump.mem" `windows.pstree`
